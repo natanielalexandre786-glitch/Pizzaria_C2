@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Desk Pizzaria</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lato:wght@300;400;700&family=Dancing+Script:wght@600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <div class="logo-area">
+        <div class="logo-icon">
+          <img src="https://images.unsplash.com/photo-1594007654729-407eedc4be65?w=80&h=80&fit=crop&crop=center" alt="Logo" />
+          <div class="logo-ring"></div>
+        </div>
+        <div class="logo-text">
+          <span class="brand-name">Desk Pizzaria</span>
+          <span class="brand-tagline">Tradição & Sabor desde 1990</span>
+        </div>
+      </div>
+
+      <nav class="category-nav">
+        <a href="#promocoes" class="nav-link">Promoções</a>
+        <a href="#combos" class="nav-link">Combos</a>
+        <a href="#especiais" class="nav-link">Especiais</a>
+        <a href="#doces" class="nav-link">Doces</a>
+        <a href="#complementos" class="nav-link">Complementos</a>
+        <a href="#bebidas" class="nav-link">Bebidas</a>
+        <a href="#sobremesas" class="nav-link">Sobremesas</a>
+      </nav>
+
+      <button class="cart-btn" id="cartBtn" aria-label="Abrir carrinho">
+        <i class="fas fa-shopping-basket"></i>
+        <span class="cart-badge" id="cartBadge">0</span>
+        <span class="cart-label">Carrinho</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO BANNER -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-sub">Bem-vindo à</p>
+      <h1 class="hero-title">Desk Pizzaria</h1>
+      <p class="hero-desc">Pizzas artesanais com ingredientes frescos e muito amor em cada fatia</p>
+      <a href="#promocoes" class="hero-cta">Ver Cardápio <i class="fas fa-arrow-down"></i></a>
+    </div>
+    <div class="hero-scroll-indicator">
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+
+    <!-- PROMOÇÕES -->
+    <section id="promocoes" class="category-section">
+      <div class="section-header">
+        <div class="section-label">
+          <i class="fas fa-fire"></i> Ofertas Especiais
+        </div>
+        <h2 class="section-title">Promoções</h2>
+        <div class="title-ornament"><span></span><i class="fas fa-pizza-slice"></i><span></span></div>
+      </div>
+      <div class="products-grid">
+
+        <div class="product-card promo-card">
+          <div class="promo-badge">-30%</div>
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&h=300&fit=crop" alt="Pizza Margherita" loading="lazy"/>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Pizza Margherita</h3>
+            <p class="product-desc">Molho de tomate fresco, mozzarella de búfala, manjericão fresco e azeite extra virgem</p>
+            <div class="size-selector" data-product="margherita" data-prices='{"M":29.90,"G":39.90,"GG":49.90}'>
+              <button class="size-btn active" data-size="M">M <small>R$ 29,90</small></button>
+              <button class="size-btn" data-size="G">G <small>R$ 39,90</small></button>
+              <button class="size-btn" data-size="GG">GG <small>R$ 49,90</small></button>
+            </div>
+            <div class="product-footer">
+              <span class="product-price" id="price-margherita">R$ 29,90</span>
+              <button class="add-btn" onclick="addToCart('Pizza Margherita', 'margherita')">
+                <i class="fas fa-plus"></i> Adicionar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card promo-card">
+          <div class="promo-badge">-25%</div>
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=300&fit=crop" alt="Pizza Pepperoni" loading="lazy"/>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Pizza Pepperoni</h3>
+            <p class="product-desc">Molho especial, mozzarella, pepperoni artesanal importado em fartas fatias</p>
+            <div class="size-selector" data-product="pepperoni" data-prices='{"M":34.90,"G":44.90,"GG":54.90}'>
+              <button class="size-btn active" data-size="M">M <small>R$ 34,90</small></button>
+              <button class="size-btn" data-size="G">G <small>R$ 44,90</small></button>
+              <button class="size-btn" data-size="GG">GG <small>R$ 54,90</small></button>
+            </div>
+            <div class="product-footer">
+              <span class="product-price" id="price-pepperoni">R$ 34,90</span>
+              <button class="add-btn" onclick="addToCart('Pizza Pepperoni', 'pepperoni')">
+                <i class="fas fa-plus"></i> Adicionar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card promo-card">
+          <div class="promo-badge">-20%</div>
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1548369937-47519962c11a?w=400&h=300&fit=crop" alt="Pizza Quatro Queijos" loading="lazy"/>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Quatro Queijos</h3>
+            <p class="product-desc">Mozzarella, gorgonzola, provolone e parmesão gratinado sobre molho branco cremoso</p>
+            <div class="size-selector" data-product="qqueijos" data-prices='{"M":36.90,"G":46.90,"GG":56.90}'>
+              <button class="size-btn active" data-size="M">M <small>R$ 36,90</small></button>
+              <button class="size-btn" data-size="G">G <small>R$ 46,90</small></button>
+              <button class="size-btn" data-size="GG">GG <small>R$ 56,90</small></button>
+            </div>
+            <div class="product-footer">
+              <span class="product-price" id="price-qqueijos">R$ 36,90</span>
+              <button class="add-btn" onclick="addToCart('Pizza Quatro Queijos', 'qqueijos')">
+                <i class="fas fa-plus"></i> Adicionar
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- COMBOS -->
+    <section id="combos" class="category-section alt-bg">
+      <div class="section-header">
+        <div class="section-label">
+          <i class="fas fa-box-open"></i> Mais por menos
+        </div>
+        <h2 class="section-title">Combos</h2>
+        <div class="title-ornament"><span></span><i class="fas fa-pizza-slice"></i><span></span></div>
+      </div>
+      <div class="products-grid">
+
+        <div class="product-card combo-card">
+          <div class="combo-badge"><i class="fas fa-star"></i> Combo</div>
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=400&h=300&fit=crop" alt="Combo Família" loading="lazy"/>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Combo Família</h3>
+            <p class="product-desc">2 pizzas GG à escolha + 2 refrigerantes 2L + 1 porção de tiramisu. Perfeito para a família!</p>
+            <div class="product-footer no-size">
+              <span class="product-price">R$ 129,90</span>
+              <button class="add-btn" onclick="addToCartFixed('Combo Família', 129.90)">
+                <i class="fas fa-plus"></i> Adicionar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card combo-card">
+          <div class="combo-badge"><i class="fas fa-heart"></i> Casal</div>
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?w=400&h=300&fit=crop" alt="Combo Casal" loading="lazy"/>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Combo Casal</h3>
+            <p class="product-desc">1 pizza G à escolha + 1 pizza doce M + 2 refrigerantes lata + 1 sobremesa. Noite perfeita!</p>
+            <div class="product-footer no-size">
+              <span class="product-price">R$ 89,90</span>
+              <button class="add-btn" onclick="addToCartFixed('Combo Casal', 89.90)">
+                <i class="fas fa-plus"></i> Adicionar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card combo-card">
+          <div class="combo-badge"><i class="fas fa-bolt"></i> Rápido</div>
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&h=300&fit=crop" alt="Combo Express" loading="lazy"/>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Combo Express</h3>
+            <p class="product-desc">1 pizza M à escolha + 1 refrigerante 600ml + 1 porção de pão de alho. Prático e saboroso!</p>
+            <div class="product-footer no-size">
+              <span class="product-price">R$ 49,90</span>
+              <button class="add-btn" onclick="addToCartFixed('Combo Express', 49.90)">
+                <i class="fas fa-plus"></i> Adicionar
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ESPECIAIS -->
+    <section id="especiais" class="category-section">
+      <div class="section-header">
+        <div class="section-label">
+          <i class="fas fa-crown"></i> Chef recomenda
+        </div>
+        <h2 class="section-title">Especiais</h2>
+        <div class="title-ornament"><span></span><i class="fas fa-pizza-slice"></i><span></span></div>
+      </div>
+      <div class="products-grid">
+
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&h=300&fit=crop" alt="Pizza Trufada" loading="lazy"/>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Pizza Trufada</h3>
+            <p class="product-desc">Creme de trufa negra, mozzarella de búfala, cogumelos shitake, parmesão e rúcula fresca</p>
+            <div class="size-selector" data-product="trufada" data-prices='{"M":49.90,"G":64.90,"GG":79.90}'>
+              <button class="size-btn active" data-size="M">M <small>R$ 49,90</small></button>
+              <button class="size-btn" data-size="G">G <small>R$ 64,90</small></button>
+              <button class="size-btn" data-size="GG">GG <small>R$ 79,90</small></button>
+            </div>
+            <div class="product-footer">
+              <span class="product-price" id="price-trufada">R$ 49,90</span>
+              <button class="add-btn" onclick="addToCart('Pizza Trufada', 'trufada')">
+                <i class="fas fa-plus"></i> Adicionar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?w=400&h=300&fit=crop" alt="Pizza Frango Catupiry" loading="lazy"/>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Frango Catupiry</h3>
+            <p class="product-desc">Frango desfiado temperado, catupiry original cremoso, mozzarella e orégano selecionado</p>
+            <div class="size-selector" data-product="frango" data-prices='{"M":38.90,"G":48.90,"GG":58.90}'>
+              <button class="size-btn active" data-size="M">M <small>R$ 38,90</small></button>
+              <button class="size-btn" data-size="G">G <small>R$ 48,90</small></button>
+              <button class="size-btn" data-size="GG">GG <small>R$ 58,90</small></button>
+            </div>
+            <div class="product-footer">
+              <span class="product-price" id="price-frango">R$ 38,90</span>
+              <button class="add-btn" onclick="addToCart('Pizza Frango Catupiry', 'frango')">
+                <i class="fas fa-plus"></i> Adicionar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?w=400&h=300&fit=crop" alt="Pizza Portuguesa" loading="lazy"/>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Pizza Portuguesa</h3>
+            <p class="product-desc">Presunto, ovos cozidos, cebola, azeitonas verdes, pimentão, mozzarella e molho especial</p>
+            <div class="size-selector" data-product="portuguesa" data-prices='{"M":37.90,"G":47.90,"GG":57.90}'>
+              <button class="size-btn active" data-size="M">M <small>R$ 37,90</small></button>
+              <button class="size-btn" data-size="G">G <small>R$ 47,90</small></button>
+              <button class="size-btn" data-size="GG">GG <small>R$ 57,90</small></button>
+            </div>
+            <div class="product-footer">
+              <span class="product-price" id="price-portuguesa">R$ 37,90</span>
+              <button class="add-btn" onclick="addToCart('Pizza Portuguesa', 'portuguesa')">
+                <i class="fas fa-plus"></i> Adicionar
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- DOCES -->
+    <section id="doces" class="category-section alt-bg">
+      <div class="section-header">
+        <div class="section-label">
+          <i class="fas fa-candy-cane"></i> Irresistíveis
+        </div>
+        <h2 class="section-title">Pizzas Doces</h2>
+        <div class="title-ornament"><span></span><i class="fas fa-pizza-slice"></i><span></span></div>
+      </div>
+      <div class="products-grid">
+
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=400&h=300&fit=crop" alt="Pizza Nutella" loading="lazy"/>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Pizza Nutella</h3>
+            <p class="product-desc">Massa crocante com generosa camada de Nutella, morangos frescos e leite condensado</p>
+            <div class="size-selector" data-product="nutella" data-prices='{"M":32.90,"G":42.90,"GG":52.90}'>
+              <button class="size-btn active" data-size="M">M <small>R$ 32,90</small></button>
+              <button class="size-btn" data-size="G">G <small>R$ 42,90</small></button>
+              <button class="size-btn" data-size="GG">GG <small>R$ 52,90</small></button>
+            </div>
+            <div class="product-footer">
+              <span class="product-price" id="price-nutella">R$ 32,90</span>
+              <button class="add-btn" onclick="addToCart('Pizza Nutella', 'nutella')">
+                <i class="fas fa-plus"></i> Adicionar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=400&h=300&fit=crop" alt="Pizza Romeu e Julieta" loading="lazy"/>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Romeu e Julieta</h3>
+            <p class="product-desc">Mozzarella cremosa, goiabada especial e uma pitada de canela. Combinação clássica brasileira</p>
+            <div class="size-selector" data-product="romeu" data-prices='{"M":29.90,"G":39.90,"GG":49.90}'>
+              <button class="size-btn active" data-size="M">M <small>R$ 29,90</small></button>
+              <button class="size-btn" data-size="G">G <small>R$ 39,90</small></button>
+              <button class="size-btn" data-size="GG">GG <small>R$ 49,90</small></button>
+            </div>
+            <div class="product-footer">
+              <span class="product-price" id="price-romeu">R$ 29,90</span>
+              <button class="add-btn" onclick="addToCart('Pizza Romeu e Julieta', 'romeu')">
+                <i class="fas fa-plus"></i> Adicionar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?w=400&h=300&fit=crop" alt="Pizza Banana Caramelizada" loading="lazy"/>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Banana Caramelizada</h3>
+            <p class="product-desc">Banana nanica caramelizada, doce de leite, canela e açúcar cristal. Um clássico nacional</p>
+            <div class="size-selector" data-product="banana" data-prices='{"M":28.90,"G":38.90,"GG":48.90}'>
+              <button class="size-btn active" data-size="M">M <small>R$ 28,90</small></button>
+              <button class="size-btn" data-size="G">G <small>R$ 38,90</small></button>
+              <button class="size-btn" data-size="GG">GG <small>R$ 48,90</small></button>
+            </div>
+            <div class="product-footer">
+              <span class="product-price" id="price-banana">R$ 28,90</span>
+              <button class="add-btn" onclick="addToCart('Pizza Banana Caramelizada', 'banana')">
+                <i class="fas fa-plus"></i> Adicionar
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- COMPLEMENTOS -->
+    <section id="complementos" class="category-section">
+      <div class="section-header">
+        <div class="section-label">
+          <i class="fas fa-utensils"></i> Para completar
+        </div>
+        <h2 class="section-title">Complementos</h2>
+        <div class="title-ornament"><span></span><i class="fas fa-pizza-slice"></i><span></span></div>
+      </div>
+      <div class="products-grid products-grid-4">
+
+        <div class="product-card small-card">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1573821663912-569905455b1c?w=300&h=220&fit=crop" alt="Pão de Alho" loading="lazy"/>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Pão de Alho</h3>
+            <p class="product-desc">Pão italiano com manteiga de alho, ervas e parmesão. Porção com 8 fatias</p>
+            <div class="product-footer no-size">
+              <span class="product-price">R$ 16,90</span>
+              <button class="add-btn" onclick="addToCartFixed('Pão de Alho', 16.90)">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card small-card">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=300&h=220&fit=crop" alt="Calzone" loading="lazy"/>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Calzone</h3>
+            <p class="product-desc">Meia-lua recheada com presunto, mozzarella e molho especial da casa. Imperdível!</p>
+            <div class="product-footer no-size">
+              <span class="product-price">R$ 22,90</span>
+              <button class="add-btn" onclick="addToCartFixed('Calzone', 22.90)">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card small-card">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1527324688151-0e627063f2b1?w=300&h=220&fit=crop" alt="Salada Caesar" loading="lazy"/>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Salada Caesar</h3>
+            <p class="product-desc">Alface romana, croutons artesanais, parmesão lascado e molho caesar cremoso</p>
+            <div class="product-footer no-size">
+              <span class="product-price">R$ 18,90</span>
+              <button class="add-btn" onclick="addToCartFixed('Salada Caesar', 18.90)">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card small-card">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1541529086526-db283c563270?w=300&h=220&fit=crop" alt="Bruschetta" loading="lazy"/>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Bruschetta</h3>
+            <p class="product-desc">Pão italiano tostado, tomate fresco, manjericão, alho e azeite extra virgem</p>
+            <div class="product-footer no-size">
+              <span class="product-price">R$ 19,90</span>
+              <button class="add-btn" onclick="addToCartFixed('Bruschetta', 19.90)">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- BEBIDAS -->
+    <section id="bebidas" class="category-section alt-bg">
+      <div class="section-header">
+        <div class="section-label">
+          <i class="fas fa-glass-cheers"></i> Refresque-se
+        </div>
+        <h2 class="section-title">Bebidas</h2>
+        <div class="title-ornament"><span></span><i class="fas fa-pizza-slice"></i><span></span></div>
+      </div>
+      <div class="products-grid products-grid-4">
+
+        <div class="product-card small-card">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1625772299848-391b6a87d7b3?w=300&h=220&fit=crop" alt="Refrigerante Lata" loading="lazy"/>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Refrigerante Lata</h3>
+            <p class="product-desc">Coca-Cola, Pepsi, Guaraná Antarctica ou Fanta. Gelado na hora! 350ml</p>
+            <div class="product-footer no-size">
+              <span class="product-price">R$ 6,90</span>
+              <button class="add-btn" onclick="addToCartFixed('Refrigerante Lata', 6.90)">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card small-card">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=220&fit=crop" alt="Cerveja Artesanal" loading="lazy"/>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Cerveja Artesanal</h3>
+            <p class="product-desc">Seleção de cervejas artesanais locais. Lager, IPA ou Weiss. 500ml bem gelado</p>
+            <div class="product-footer no-size">
+              <span class="product-price">R$ 14,90</span>
+              <button class="add-btn" onclick="addToCartFixed('Cerveja Artesanal', 14.90)">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card small-card">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=300&h=220&fit=crop" alt="Vinho" loading="lazy"/>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Vinho da Casa</h3>
+            <p class="product-desc">Vinho tinto ou branco selecionado. Perfeito para acompanhar nossas pizzas especiais</p>
+            <div class="product-footer no-size">
+              <span class="product-price">R$ 29,90</span>
+              <button class="add-btn" onclick="addToCartFixed('Vinho da Casa', 29.90)">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card small-card">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1621263764928-df1444c5e859?w=300&h=220&fit=crop" alt="Suco Natural" loading="lazy"/>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Suco Natural</h3>
+            <p class="product-desc">Laranja, limão, maracujá ou acerola. Feito na hora com frutas frescas selecionadas. 400ml</p>
+            <div class="product-footer no-size">
+              <span class="product-price">R$ 10,90</span>
+              <button class="add-btn" onclick="addToCartFixed('Suco Natural', 10.90)">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SOBREMESAS -->
+    <section id="sobremesas" class="category-section">
+      <div class="section-header">
+        <div class="section-label">
+          <i class="fas fa-ice-cream"></i> Finalize com estilo
+        </div>
+        <h2 class="section-title">Sobremesas</h2>
+        <div class="title-ornament"><span></span><i class="fas fa-pizza-slice"></i><span></span></div>
+      </div>
+      <div class="products-grid products-grid-4">
+
+        <div class="product-card small-card">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=300&h=220&fit=crop" alt="Tiramisu" loading="lazy"/>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Tiramisu</h3>
+            <p class="product-desc">Receita original italiana com mascarpone, biscoito champagne, café e cacau. Individual</p>
+            <div class="product-footer no-size">
+              <span class="product-price">R$ 18,90</span>
+              <button class="add-btn" onclick="addToCartFixed('Tiramisu', 18.90)">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card small-card">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=300&h=220&fit=crop" alt="Cheesecake" loading="lazy"/>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Cheesecake</h3>
+            <p class="product-desc">Cheesecake cremoso de morango ou frutas vermelhas. Base crocante de biscoito amanteigado</p>
+            <div class="product-footer no-size">
+              <span class="product-price">R$ 16,90</span>
+              <button class="add-btn" onclick="addToCartFixed('Cheesecake', 16.90)">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card small-card">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1567206563114-c179d78e4edb?w=300&h=220&fit=crop" alt="Panna Cotta" loading="lazy"/>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Panna Cotta</h3>
+            <p class="product-desc">Sobremesa italiana delicada com creme de leite, baunilha e calda de frutas vermelhas</p>
+            <div class="product-footer no-size">
+              <span class="product-price">R$ 15,90</span>
+              <button class="add-btn" onclick="addToCartFixed('Panna Cotta', 15.90)">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card small-card">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=300&h=220&fit=crop" alt="Gelato" loading="lazy"/>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Gelato Italiano</h3>
+            <p class="product-desc">Sorvete artesanal nos sabores: pistache, stracciatella, limão siciliano ou chocolate belga</p>
+            <div class="product-footer no-size">
+              <span class="product-price">R$ 13,90</span>
+              <button class="add-btn" onclick="addToCartFixed('Gelato Italiano', 13.90)">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- CART SIDEBAR -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h2><i class="fas fa-shopping-basket"></i> Seu Pedido</h2>
+      <button class="cart-close" id="cartClose" aria-label="Fechar carrinho">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="cart-body" id="cartBody">
+      <div class="cart-empty" id="cartEmpty">
+        <i class="fas fa-pizza-slice"></i>
+        <p>Seu carrinho está vazio</p>
+        <small>Adicione itens do cardápio</small>
+      </div>
+      <ul class="cart-list" id="cartList"></ul>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-subtotal">
+        <span>Subtotal</span>
+        <span id="cartSubtotal">R$ 0,00</span>
+      </div>
+      <div class="cart-delivery">
+        <span>Taxa de entrega</span>
+        <span>R$ 5,00</span>
+      </div>
+      <div class="cart-total">
+        <span>Total</span>
+        <span id="cartTotal">R$ 5,00</span>
+      </div>
+      <button class="checkout-btn" id="checkoutBtn">
+        <i class="fas fa-whatsapp"></i> Finalizar Pedido
+      </button>
+    </div>
+  </aside>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast" id="toast">
+    <i class="fas fa-check-circle"></i>
+    <span id="toastMsg">Item adicionado!</span>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="https://images.unsplash.com/photo-1594007654729-407eedc4be65?w=60&h=60&fit=crop&crop=center" alt="Logo"/>
+        </div>
+        <div>
+          <span class="footer-name">Desk Pizzaria</span>
+          <p class="footer-motto">"Cada pizza, uma obra de arte"</p>
+        </div>
+      </div>
+      <div class="footer-hours">
+        <h4><i class="fas fa-clock"></i> Horário de Funcionamento</h4>
+        <p>Seg – Sex: 18h às 23h</p>
+        <p>Sáb – Dom: 17h às 00h</p>
+      </div>
+      <div class="footer-contact">
+        <h4><i class="fas fa-map-marker-alt"></i> Localização</h4>
+        <p>Rua das Pizzas, 123</p>
+        <p>João Pessoa – PB</p>
+      </div>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-bottom">
+      <div class="footer-owner">
+        <i class="fas fa-store"></i>
+        <div>
+          <strong>Desk Food Division</strong>
+          <a href="tel:81999999999"><i class="fas fa-phone"></i> (81) 99999-9999</a>
+        </div>
+      </div>
+      <div class="footer-copy">
+        <p>© 2024 Desk Pizzaria · Todos os direitos reservados</p>
+      </div>
+      <div class="footer-dev">
+        <i class="fas fa-code"></i>
+        <div>
+          <strong>thiagop dev</strong>
+          <a href="tel:85948756746"><i class="fas fa-phone"></i> (85) 94875-6746</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
